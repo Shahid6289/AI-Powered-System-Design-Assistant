@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pydantic
+transformers
+torch
+python-dotenv
+openai
+accelerate  
+bitsandbytes
+groq

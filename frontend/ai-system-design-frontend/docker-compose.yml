@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  frontend:
+    build: .
+    container_name: ai_sda_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      # If running backend on host: http://localhost:8080/api/v1
+      # If running backend as docker service on same network, use its service name:
+      # http://ai_sda_backend:8080/api/v1
+      - REACT_APP_API_BASE=http://localhost:8080/api/v1
+    stdin_open: true
+    tty: true

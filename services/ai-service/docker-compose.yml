@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  ai-service:
+    build: .
+    container_name: ai_service
+    environment:
+      - MODEL_BACKEND=template       # change to 'hf' to use HuggingFace (requires extra libs)
+      - MODEL_NAME=distilgpt2
+      - USE_GPU=false
+    ports:
+      - "9000:9000"

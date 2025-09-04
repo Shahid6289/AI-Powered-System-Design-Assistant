@@ -1,0 +1,512 @@
+/* Register Page Styles */
+.register-container {
+  min-height: 132vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 20px;
+}
+
+.register-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.register-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+  animation: float 8s ease-in-out infinite;
+}
+
+.register-shape-1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  right: -100px;
+  animation-delay: 0s;
+}
+
+.register-shape-2 {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  left: -50px;
+  animation-delay: 2s;
+}
+
+.register-shape-3 {
+  width: 150px;
+  height: 150px;
+  top: 50%;
+  right: 20%;
+  animation-delay: 4s;
+}
+
+.register-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-height: 700px;
+  z-index: 2;
+  position: relative;
+}
+
+@media (max-width: 968px) {
+  .register-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Illustration Side */
+.register-illustration {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.illustration-container {
+  text-align: center;
+  max-width: 400px;
+}
+
+.architecture-visualization {
+  position: relative;
+  height: 300px;
+  margin-bottom: 2rem;
+}
+
+.arch-node {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.main-arch-node {
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.node-icon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.5rem;
+}
+
+.node-icon svg {
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+.service-arch-node {
+  width: 80px;
+  height: 40px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.service-arch-node:nth-child(2) {
+  top: 20%;
+  left: 25%;
+  animation-delay: 0.5s;
+}
+
+.service-arch-node:nth-child(3) {
+  top: 20%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.service-arch-node:nth-child(4) {
+  bottom: 20%;
+  left: 30%;
+  animation-delay: 1.5s;
+}
+
+.service-arch-node:nth-child(5) {
+  bottom: 20%;
+  right: 10%;
+  animation-delay: 2s;
+}
+
+.arch-connection {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+}
+
+.arch-connection-1 {
+  width: 100px;
+  height: 2px;
+  top: 30%;
+  left: 30%;
+  transform: rotate(-30deg);
+  animation: connectionPulse 3s infinite;
+}
+
+.arch-connection-2 {
+  width: 100px;
+  height: 2px;
+  top: 30%;
+  right: 30%;
+  transform: rotate(30deg);
+  animation: connectionPulse 3s infinite 1s;
+}
+
+.arch-connection-3 {
+  width: 120px;
+  height: 2px;
+  bottom: 30%;
+  left: 30%;
+  transform: rotate(30deg);
+  animation: connectionPulse 3s infinite 2s;
+}
+
+.arch-connection-4 {
+  width: 120px;
+  height: 2px;
+  bottom: 30%;
+  right: 30%;
+  transform: rotate(-30deg);
+  animation: connectionPulse 3s infinite 3s;
+}
+
+.illustration-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.illustration-text p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.feature-list {
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.feature-item svg {
+  width: 20px;
+  height: 20px;
+  color: #48bb78;
+  flex-shrink: 0;
+}
+
+/* Form Side */
+.register-form-container {
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-form-wrapper {
+  width: 100%;
+  max-width: 400px;
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.register-header .logo {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+}
+
+.register-header .logo svg {
+  width: 30px;
+  height: 30px;
+}
+
+.register-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.register-header p {
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+.register-error {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #fed7d7;
+  color: #c53030;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.register-error svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.register-form {
+  margin-bottom: 2rem;
+}
+
+/* Password Strength */
+.password-strength {
+  margin-bottom: 1.5rem;
+}
+
+.password-strength-bar {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.strength-indicator {
+  height: 100%;
+  width: 0%;
+  transition: all 0.3s ease;
+}
+
+.strength-indicator.weak {
+  width: 33.33%;
+  background: #f56565;
+}
+
+.strength-indicator.medium {
+  width: 66.66%;
+  background: #ecc94b;
+}
+
+.strength-indicator.strong {
+  width: 100%;
+  background: #48bb78;
+}
+
+.password-strength-text {
+  font-size: 0.8rem;
+  color: #718096;
+  margin: 0;
+}
+
+/* Terms Checkbox */
+.form-options {
+  margin-bottom: 2rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  width: 18px;
+  height: 18px;
+  background: #f7fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 4px;
+  margin-right: 0.75rem;
+  margin-top: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.checkbox-label input:checked ~ .checkmark {
+  background: #667eea;
+  border-color: #667eea;
+}
+
+.checkmark:after {
+  content: "";
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  display: none;
+}
+
+.checkbox-label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-label a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.checkbox-label a:hover {
+  text-decoration: underline;
+}
+
+.register-button {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.register-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.register-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.register-button.loading {
+  background: linear-gradient(135deg, #a0aec0 0%, #718096 100%);
+}
+
+/* Social Register */
+.social-register {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.login-link {
+  text-align: center;
+  color: #718096;
+}
+
+.login-link a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.login-link a:hover {
+  color: #5a67d8;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .register-container {
+    padding: 10px;
+  }
+  
+  .register-content {
+    min-height: auto;
+  }
+  
+  .register-illustration,
+  .register-form-container {
+    padding: 2rem 1.5rem;
+  }
+  
+  .social-register {
+    grid-template-columns: 1fr;
+  }
+  
+  .architecture-visualization {
+    height: 200px;
+  }
+}
+
+.diagram-container {
+  width: 100%;
+  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+.diagram-container svg {
+  max-width: 100%;
+  height: auto;
+}
+.diagram-error {
+  color: #d32f2f;
+  text-align: center;
+  padding: 1rem;
+}
+.diagram-error pre {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}

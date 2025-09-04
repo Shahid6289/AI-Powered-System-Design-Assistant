@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/ai_system_design}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:root123} # default for your local pgAdmin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS:localhost:9092} # Kafka broker address
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      group-id: ${KAFKA_CONSUMER_GROUP_ID:design-group} # Consumer group for design jobs
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      auto-offset-reset: earliest
+
+app:
+  jwt:
+    secret: ${APP_JWT_SECRET:iE0bwvzQpSzKXeMBF7IP7TfXyxUj2CMqOvc2sX7Cd5Q=}
+    expirationMinutes: ${APP_JWT_EXP_MIN:120}
+  ai:
+    baseUrl: ${AI_SERVICE_BASE_URL:http://localhost:9000}
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.aiassistant.backend: DEBUG
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true

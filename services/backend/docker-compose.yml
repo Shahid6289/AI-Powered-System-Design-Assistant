@@ -1,0 +1,47 @@
+version: "3.9"
+services:
+  postgres:
+    image: postgres:16
+    container_name: ai_sda_postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ai_system_design
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ai_system_design"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./services/backend
+      dockerfile: Dockerfile
+    container_name: ai_sda_backend
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/ai_system_design
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      APP_JWT_SECRET: dev-secret-key-change
+      APP_JWT_EXP_MIN: 120
+      AI_SERVICE_BASE_URL: http://ai-service:9000
+    ports:
+      - "8080:8080"
+
+  ai-service:
+    build:
+      context: ./services/ai-service
+      dockerfile: Dockerfile
+    container_name: ai_sda_ai
+    ports:
+      - "9000:9000"
+
+volumes:
+  pgdata:

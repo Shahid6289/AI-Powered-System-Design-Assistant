@@ -148,7 +148,7 @@ Below are screenshots showcasing the application’s user interface:
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/your-username/ai-system-design-assistant.git
+   git clone https://github.com/Shahid6289/AI-Powered-System-Design-Assistant.git
    cd ai-system-design-assistant
    ```
 

@@ -62,7 +62,7 @@ public class DesignService {
                     .build();
         }
 
-        String aiResp = null; // Declare outside try block
+        String aiResp = null;
         try {
             // Call AI service and parse response
             Map<String, Object> rawOutput = aiClient.generateDesign(req);
